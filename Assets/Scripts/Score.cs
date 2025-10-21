@@ -3,22 +3,8 @@ using TMPro;
 
 public class Score : MonoBehaviour
 {
-    public static Score instance;
-
     public int score = 0;
-    public TextMeshProUGUI scoreText; // Optional if you have on-screen UI
-
-    void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
+    public TextMeshProUGUI scoreText;
 
     public void AddScore(int points)
     {
