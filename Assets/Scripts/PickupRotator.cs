@@ -33,7 +33,7 @@ public class PickupRotator : MonoBehaviour
 
 
             GameObject clone = Instantiate(ballInScene, spawnPos, Quaternion.identity);
-            clone.tag = "Clone";
+            clone.tag = "Ball";
 
             BallControl ballCtrl = clone.GetComponent<BallControl>();
             if (ballCtrl != null)
