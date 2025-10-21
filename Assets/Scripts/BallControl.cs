@@ -8,9 +8,8 @@ public class BallControl : MonoBehaviour
     public float limitRight = 12.25f;
     public Vector3 resetPosition;
     public bool isClone = false;
+    public Score score; 
     
-
-    //Temporary score holder
     void Start()
     {
         resetPosition = transform.position;
@@ -72,10 +71,9 @@ public class BallControl : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Goal goal = other.GetComponent<Goal>();
-
         if (goal != null)
         {
-            Score.instance.AddScore(goal.points);
+            score.AddScore(goal.points);
         }
     }
 }
