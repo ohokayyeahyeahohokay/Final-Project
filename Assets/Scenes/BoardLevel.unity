@@ -4073,6 +4073,7 @@ MonoBehaviour:
   limitRight: 12.25
   resetPosition: {x: 0, y: 0, z: 0}
   isClone: 0
+  score: {fileID: 1103824531}
 --- !u!1 &1721446961
 GameObject:
   m_ObjectHideFlags: 0
