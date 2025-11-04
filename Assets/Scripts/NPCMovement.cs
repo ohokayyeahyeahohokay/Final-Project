@@ -29,11 +29,10 @@ public class NPCMovement : MonoBehaviour
         }
 
         // changes between idle and walking animation, uses same animator from our player model
-        if (animator != null)
-        {
-            bool isMoving = agent.velocity.magnitude > 0.1f;
-            animator.SetBool("isWalking", isMoving);
-        }
+    
+        bool isMoving = agent.velocity.magnitude > 0.1f;
+        animator.SetBool("isWalking", isMoving);
+        
     }
 
     //useful function from a video guide that basically scans the area around the npc 
