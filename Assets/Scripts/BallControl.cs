@@ -73,7 +73,7 @@ public class BallControl : MonoBehaviour
         Goal goal = other.GetComponent<Goal>();
         if (goal != null)
         {
-            score.AddScore(goal.points);
+            score.AddScore(1);
         }
     }
 }

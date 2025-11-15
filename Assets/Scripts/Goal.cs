@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Goal : MonoBehaviour
 {
-    public int points = 25;
+    public int points = 1;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
