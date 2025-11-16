@@ -110,8 +110,13 @@ public class BallControl : MonoBehaviour
     //score add function
     public void AddRunScore(int value)
     {
-    runScore += value;
-    Debug.Log("Run Score: " + runScore);
+        runScore += value;
+        // Add points immediately to the main score so UI updates right away
+        if (score != null)
+        {
+            score.AddScore(value);
+        }
+        Debug.Log("Run Score: " + runScore);
     }
 
 
@@ -120,10 +125,15 @@ public class BallControl : MonoBehaviour
     Goal goal = other.GetComponent<Goal>();
     if (goal != null)
     {
-        int total = runScore * goal.multiplier;
-        score.AddScore(total);
+        // Calculate bonus: since coins already added points, give bonus based on multiplier
+        // Bonus = runScore * (multiplier - 1) so 2x gives 1x bonus, 3x gives 2x bonus, etc.
+        int bonus = runScore * (goal.multiplier - 1);
+        if (score != null && bonus > 0)
+        {
+            score.AddScore(bonus);
+        }
 
-        Debug.Log($"Goal reached! RunScore={runScore}, Multiplier={goal.multiplier}, Added={total}");
+        Debug.Log($"Goal reached! RunScore={runScore}, Multiplier={goal.multiplier}x, Bonus={bonus}");
         Debug.Log("Main Score: " + score.score);
 
         runScore = 0;
