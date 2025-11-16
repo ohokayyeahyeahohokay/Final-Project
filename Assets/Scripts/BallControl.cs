@@ -28,12 +28,14 @@ public class BallControl : MonoBehaviour
             else if (Input.GetKey(KeyCode.D))
                 moveInput = 1f;
 
+            //movement for ball left or right before dropping
             Vector3 moveOffset = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
             Vector3 newPosition = transform.position + moveOffset;
 
             newPosition.x = Mathf.Clamp(newPosition.x, limitLeft, limitRight);
 
             transform.position = newPosition;
+
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -68,6 +70,7 @@ public class BallControl : MonoBehaviour
         }
     }
 
+    //for when the ball clones hit the bottom
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Bottom"))

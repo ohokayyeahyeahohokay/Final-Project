@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Coin : MonoBehaviour
 {
-    public int coinValue = 5; // how much each coin is worth
+    public int coinValue = 5;
 
     private void OnTriggerEnter(Collider other)
     {
