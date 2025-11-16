@@ -8,8 +8,10 @@ public class BallControl : MonoBehaviour
     public float limitRight = 12.25f;
     public Vector3 resetPosition;
     public bool isClone = false;
-    public Score score; 
-    
+    public Score score;
+
+    private int runScore = 0; // points collected during this fall
+
     void Start()
     {
         resetPosition = transform.position;
@@ -22,20 +24,18 @@ public class BallControl : MonoBehaviour
             float moveInput = 0f;
 
             if (Input.GetKey(KeyCode.A))
-            {
                 moveInput = -1f;
-            }
             else if (Input.GetKey(KeyCode.D))
-            {
                 moveInput = 1f;
-            }
 
+            //movement for ball left or right before dropping
             Vector3 moveOffset = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
             Vector3 newPosition = transform.position + moveOffset;
 
             newPosition.x = Mathf.Clamp(newPosition.x, limitLeft, limitRight);
 
             transform.position = newPosition;
+
 
             if (Input.GetKey(KeyCode.Space))
             {
@@ -44,28 +44,15 @@ public class BallControl : MonoBehaviour
                 rBall.isKinematic = false;
                 rBall.AddForce(Random.Range(-5f, 5f), 0, 0, ForceMode.Impulse);
 
+                runScore = 0; // reset run score when dropping
             }
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void AddRunScore(int value)
     {
-        if (collision.gameObject.CompareTag("Bottom"))
-        {
-            if (isClone)
-            {
-                // destroy clones
-                Destroy(gameObject);
-            }
-            else
-            {
-                // reset original ball
-                canMove = true;
-                Rigidbody rBall = GetComponent<Rigidbody>();
-                rBall.isKinematic = true;
-                transform.position = resetPosition;
-            }
-        }
+        runScore += value;
+        Debug.Log("Run Score: " + runScore);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -73,7 +60,33 @@ public class BallControl : MonoBehaviour
         Goal goal = other.GetComponent<Goal>();
         if (goal != null)
         {
-            score.AddScore(1);
+            int total = runScore * goal.multiplier;
+            score.AddScore(total);
+
+            Debug.Log($"Goal reached! RunScore={runScore}, Multiplier={goal.multiplier}, Added={total}");
+
+            // reset for next run
+            runScore = 0;
+        }
+    }
+
+    //for when the ball clones hit the bottom
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Bottom"))
+        {
+            if (isClone)
+            {
+                Destroy(gameObject);
+            }
+            else
+            {
+                canMove = true;
+                Rigidbody rBall = GetComponent<Rigidbody>();
+                rBall.isKinematic = true;
+                transform.position = resetPosition;
+                runScore = 0; // reset if ball falls without scoring
+            }
         }
     }
 }
