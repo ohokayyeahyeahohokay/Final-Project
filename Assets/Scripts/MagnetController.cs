@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class MagnetPulse : MonoBehaviour
 {
+    public MagnetCharges chargeUI;  
     public float moveSpeed = 15f;
     public float depth = 0f;
     public float pulseRadius = 5f;
@@ -38,6 +39,12 @@ public class MagnetPulse : MonoBehaviour
 
     void Pulse(bool push)
     {
+        if (!chargeUI.UseCharge())
+        {
+            Debug.Log("No magnet charges left!");
+            return;
+        }
+    
         Vector3 direction = (ballRb.position - transform.position);
         float distance = direction.magnitude;
 

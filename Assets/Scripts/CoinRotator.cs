@@ -7,10 +7,7 @@ public class Coin : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         BallControl ball = other.GetComponent<BallControl>();
-        if (ball != null)
-        {
-            ball.AddRunScore(coinValue);
-            Destroy(gameObject); // remove the coin when collected
-        }
+        ball.AddRunScore(coinValue);
+        Destroy(gameObject);
     }
 }

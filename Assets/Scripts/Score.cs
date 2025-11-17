@@ -8,7 +8,6 @@ public class Score : MonoBehaviour
 
     void Start()
     {
-        // Initialize the score display when the game starts
         score = 0;
         UpdateScoreDisplay();
     }
@@ -22,7 +21,6 @@ public class Score : MonoBehaviour
 
     void UpdateScoreDisplay()
     {
-        if (scoreText != null)
-            scoreText.text = "Score: " + score.ToString();
+        scoreText.text = "Score: " + score.ToString();
     }
 }
