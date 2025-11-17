@@ -1,4 +1,6 @@
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class BallControl : MonoBehaviour
 {
@@ -17,7 +19,14 @@ public class BallControl : MonoBehaviour
 
     //scoring
     public Score score;
-    private int runScore = 0; // points collected during this fall
+    private int runScore = 0;
+
+    //round UI
+    public TextMeshProUGUI roundText;
+    public int roundCounter = 0;
+    public int maxRounds = 2;
+
+    private bool gameEnded = false;
 
     Rigidbody rb;
 
@@ -25,14 +34,18 @@ public class BallControl : MonoBehaviour
     {
         resetPosition = transform.position;
         rb = GetComponent<Rigidbody>();
+        UpdateRoundUI();
     }
 
     void Update()
     {
+        if (gameEnded)
+            return;
+
         if (canMove)
         {
-            HandleTopMovement();
-            HandleDrop();
+            TopMovement();
+            Drop();
         }
         else
         {
@@ -40,8 +53,8 @@ public class BallControl : MonoBehaviour
         }
     }
 
-    //ball movement function when it hasnt been dropped
-    void HandleTopMovement()
+    //top movement before dropping
+    void TopMovement()
     {
         float moveInput = 0f;
 
@@ -52,27 +65,26 @@ public class BallControl : MonoBehaviour
 
         Vector3 moveOffset = new Vector3(moveInput * moveSpeed * Time.deltaTime, 0f, 0f);
         Vector3 newPosition = transform.position + moveOffset;
-
         newPosition.x = Mathf.Clamp(newPosition.x, limitLeft, limitRight);
+
         transform.position = newPosition;
     }
 
-    //drop function
-    void HandleDrop()
+    //game start drop
+    void Drop()
     {
         if (Input.GetKey(KeyCode.Space))
         {
             canMove = false;
             rb.isKinematic = false;
 
-            // slight starting push
             rb.AddForce(Random.Range(-5f, 5f), 0, 0, ForceMode.Impulse);
 
             runScore = 0;
         }
     }
 
-    //jump and dash
+    //mid-air movement
     void HandleDashAndJump()
     {
         if (!canMove)
@@ -98,7 +110,6 @@ public class BallControl : MonoBehaviour
                 rb.AddForce(curve * jumpForce, ForceMode.Impulse);
             }
 
-            
             if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.W))
             {
                 Vector3 curve = (Vector3.up + Vector3.right).normalized;
@@ -107,56 +118,88 @@ public class BallControl : MonoBehaviour
         }
     }
 
-    //score add function
+    //collect points during fall
     public void AddRunScore(int value)
     {
         runScore += value;
-        // Add points immediately to the main score so UI updates right away
-        if (score != null)
-        {
-            score.AddScore(value);
-        }
+        score.AddScore(value);
+
         Debug.Log("Run Score: " + runScore);
     }
 
-
+    //goal scoring
     private void OnTriggerEnter(Collider other)
-{
-    Goal goal = other.GetComponent<Goal>();
-    if (goal != null)
     {
-        // Calculate bonus: since coins already added points, give bonus based on multiplier
-        // Bonus = runScore * (multiplier - 1) so 2x gives 1x bonus, 3x gives 2x bonus, etc.
-        int bonus = runScore * (goal.multiplier - 1);
-        if (score != null && bonus > 0)
+        Goal goal = other.GetComponent<Goal>();
+
+        if (goal != null)
         {
-            score.AddScore(bonus);
+            int bonus = runScore * (goal.multiplier - 1);
+
+            if (score != null && bonus > 0)
+                score.AddScore(bonus);
+
+            Debug.Log($"Goal reached! RunScore={runScore}, Multiplier={goal.multiplier}x, Bonus={bonus}");
+            Debug.Log("Main Score: " + score.score);
+
+            runScore = 0;
         }
-
-        Debug.Log($"Goal reached! RunScore={runScore}, Multiplier={goal.multiplier}x, Bonus={bonus}");
-        Debug.Log("Main Score: " + score.score);
-
-        runScore = 0;
     }
-}
 
-
-    //reset ball function
+    //bottom collision 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Bottom"))
+        if (!collision.gameObject.CompareTag("Bottom"))
+            return;
+
+        if (isClone)
         {
-            if (isClone)
-            {
-                Destroy(gameObject);
-            }
-            else
-            {
-                canMove = true;
-                rb.isKinematic = true;
-                transform.position = resetPosition;
-                runScore = 0;
-            }
+            Destroy(gameObject);
+            return;
         }
+
+        roundCounter++;
+        UpdateRoundUI();
+
+        // Check if game is done
+        if (roundCounter == maxRounds)
+        {
+            EndGame();
+            return;
+        }
+
+        // Reset for next round
+        ResetBall();
+    }
+
+    void ResetBall()
+    {
+        canMove = true;
+        rb.isKinematic = true;
+        transform.position = resetPosition;
+        runScore = 0;
+    }
+
+    void UpdateRoundUI()
+    {
+        roundText.text = "Round: " + roundCounter + "/" + maxRounds;
+    }
+
+    void EndGame()
+    {
+        gameEnded = true;
+
+        Debug.Log("ROUND OVER");
+
+        // freeze gameplay
+        Time.timeScale = 0f;
+
+        //placeholder
+
+        // Load hub
+        // SceneManager.LoadScene("Hub");
+
+        // Load next level
+        // SceneManager.LoadScene("");
     }
 }
