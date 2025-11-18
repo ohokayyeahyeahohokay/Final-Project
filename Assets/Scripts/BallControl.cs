@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class BallControl : MonoBehaviour
 {
@@ -31,6 +33,10 @@ public class BallControl : MonoBehaviour
 
 
     Rigidbody rb;
+
+    //portal peg
+    public bool canTeleport = true;
+
 
     void Start()
     {
@@ -193,6 +199,13 @@ public class BallControl : MonoBehaviour
     void UpdateRoundUI()
     {
         roundText.text = "Round: " + roundCounter + "/" + maxRounds;
+    }
+
+    public IEnumerator DisableTeleport(float time)
+    {
+        canTeleport = false;
+        yield return new WaitForSeconds(time);
+        canTeleport = true;
     }
 
     void EndGame()
