@@ -21,12 +21,14 @@ public class BallControl : MonoBehaviour
     public Score score;
     private int runScore = 0;
 
-    //round UI
+    //UI
     public TextMeshProUGUI roundText;
     public int roundCounter = 0;
     public int maxRounds = 2;
 
     private bool gameEnded = false;
+    public PlayerCharges playerCharges;
+
 
     Rigidbody rb;
 
@@ -91,29 +93,38 @@ public class BallControl : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.W))
             {
-                rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+                if (playerCharges.UseCharge())
+                    rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             }
 
             if (Input.GetKeyDown(KeyCode.A))
             {
-                rb.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
+                if (playerCharges.UseCharge())
+                    rb.AddForce(Vector3.left * dashForce, ForceMode.Impulse);
             }
 
             if (Input.GetKeyDown(KeyCode.D))
             {
-                rb.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
+                if (playerCharges.UseCharge())
+                    rb.AddForce(Vector3.right * dashForce, ForceMode.Impulse);
             }
 
             if (Input.GetKey(KeyCode.A) && Input.GetKeyDown(KeyCode.W))
             {
-                Vector3 curve = (Vector3.up + Vector3.left).normalized;
-                rb.AddForce(curve * jumpForce, ForceMode.Impulse);
+                if (playerCharges.UseCharge())
+                {
+                    Vector3 curve = (Vector3.up + Vector3.left).normalized;
+                    rb.AddForce(curve * jumpForce, ForceMode.Impulse);
+                }
             }
 
             if (Input.GetKey(KeyCode.D) && Input.GetKeyDown(KeyCode.W))
             {
-                Vector3 curve = (Vector3.up + Vector3.right).normalized;
-                rb.AddForce(curve * jumpForce, ForceMode.Impulse);
+                if (playerCharges.UseCharge())
+                {
+                    Vector3 curve = (Vector3.up + Vector3.right).normalized;
+                    rb.AddForce(curve * jumpForce, ForceMode.Impulse);
+                }
             }
         }
     }
@@ -161,14 +172,13 @@ public class BallControl : MonoBehaviour
         roundCounter++;
         UpdateRoundUI();
 
-        // Check if game is done
         if (roundCounter == maxRounds)
         {
             EndGame();
             return;
         }
 
-        // Reset for next round
+
         ResetBall();
     }
 
@@ -191,7 +201,7 @@ public class BallControl : MonoBehaviour
 
         Debug.Log("ROUND OVER");
 
-        // freeze gameplay
+        // freeze game
         Time.timeScale = 0f;
 
         //placeholder
