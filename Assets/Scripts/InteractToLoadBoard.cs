@@ -40,7 +40,7 @@ public class InteractToLoadBoard : MonoBehaviour
         // If player is near and presses E, load BoardLevel
         if (playerInRange && Input.GetKeyDown(KeyCode.E))
         {
-            SceneManager.LoadScene("BoardLevel");
+            SceneManager.LoadScene("RockLevel");
         }
     }
 
