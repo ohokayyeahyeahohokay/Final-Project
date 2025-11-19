@@ -7,6 +7,7 @@ TagManager:
   - Bottom
   - Ball
   - Clone
+  - KeyItem
   layers:
   - Default
   - TransparentFX

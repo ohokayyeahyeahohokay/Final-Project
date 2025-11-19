@@ -1,13 +1,15 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
+using System.Collections;
+
 
 public class BallControl : MonoBehaviour
 {
     //movement
-    public float moveSpeed = 5f;
-    public float dashForce = 10f;
-    public float jumpForce = 12f;
+    public float moveSpeed = 3f;
+    public float dashForce = 7f;
+    public float jumpForce = 10f;
 
     bool canMove = true;
     public float limitLeft = -12.25f;
@@ -20,10 +22,17 @@ public class BallControl : MonoBehaviour
     //scoring
     public Score score;
     private int runScore = 0;
+    public int currentBallPlayer = 1;
+    public int player1Score = 0;
+    public int player2Score = 0;
+    public TextMeshProUGUI player1ScoreText;
+    public TextMeshProUGUI player2ScoreText;
+
+
 
     //UI
     public TextMeshProUGUI roundText;
-    public int roundCounter = 0;
+    public int roundCounter = 1;
     public int maxRounds = 2;
 
     private bool gameEnded = false;
@@ -32,10 +41,16 @@ public class BallControl : MonoBehaviour
 
     Rigidbody rb;
 
+    //portal peg
+    public bool canTeleport = true;
+
+    public bool hasKey = false;
+
     void Start()
     {
         resetPosition = transform.position;
         rb = GetComponent<Rigidbody>();
+        UpdateScorePanels();
         UpdateRoundUI();
     }
 
@@ -133,10 +148,25 @@ public class BallControl : MonoBehaviour
     public void AddRunScore(int value)
     {
         runScore += value;
-        score.AddScore(value);
 
-        Debug.Log("Run Score: " + runScore);
+        if (currentBallPlayer == 1)
+            player1Score += value;
+        else
+            player2Score += value;
+
+        UpdateScorePanels();
+
+    
+        score.AddScore(value);
     }
+
+    void UpdateScorePanels()
+    {
+        player1ScoreText.text = "Player 1: " + player1Score;
+        player2ScoreText.text = "Player 2: " + player2Score;
+    }
+
+
 
     //goal scoring
     private void OnTriggerEnter(Collider other)
@@ -172,7 +202,7 @@ public class BallControl : MonoBehaviour
         roundCounter++;
         UpdateRoundUI();
 
-        if (roundCounter == maxRounds)
+        if (roundCounter > 2)
         {
             EndGame();
             return;
@@ -180,6 +210,8 @@ public class BallControl : MonoBehaviour
 
 
         ResetBall();
+        SwitchPlayers();
+
     }
 
     void ResetBall()
@@ -188,12 +220,38 @@ public class BallControl : MonoBehaviour
         rb.isKinematic = true;
         transform.position = resetPosition;
         runScore = 0;
+        hasKey = false;
+        FindObjectOfType<KeyPickup>()?.ResetKey();
+        FindObjectOfType<UnlockPeg>()?.ResetLock();
+        
     }
+
+    void SwitchPlayers()
+    {
+        if (currentBallPlayer == 1)
+            currentBallPlayer = 2;
+        else
+            currentBallPlayer = 1;
+
+        UpdateScorePanels();
+
+        Debug.Log("Now it's Player " + currentBallPlayer + "'s turn as the Ball.");
+    }
+
 
     void UpdateRoundUI()
     {
         roundText.text = "Round: " + roundCounter + "/" + maxRounds;
     }
+
+    public IEnumerator DisableTeleport(float time)
+    {
+        canTeleport = false;
+        yield return new WaitForSeconds(time);
+        canTeleport = true;
+    }
+
+
 
     void EndGame()
     {
