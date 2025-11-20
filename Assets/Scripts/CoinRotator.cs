@@ -3,8 +3,10 @@ using UnityEngine;
 public class Coin : MonoBehaviour
 {
     public int coinValue = 5;
+    public AudioSource coinPickup;
     MeshRenderer rend;
     Collider col;
+
 
     void Awake()
     {
@@ -29,5 +31,6 @@ public class Coin : MonoBehaviour
         BallControl ball = other.GetComponent<BallControl>();
         ball.AddRunScore(coinValue);
         HideCoin();
+        coinPickup.Play();
     }
 }
