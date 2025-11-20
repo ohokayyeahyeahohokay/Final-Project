@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RockLevel.unity
     guid: 814aa2fac252e4aeeb9a570e3ca98011
   - enabled: 1
+    path: Assets/Scenes/RockLevel 1.unity
+    guid: b957c902ccfaf484a8461e9bd9bbe67a
+  - enabled: 1
     path: Assets/Scenes/BoardLevel.unity
     guid: 46582d24c961f4f90851ea004b3493af
   m_configObjects:
