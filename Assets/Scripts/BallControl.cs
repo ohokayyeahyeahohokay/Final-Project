@@ -242,8 +242,8 @@ public class BallControl : MonoBehaviour
         transform.position = resetPosition;
         runScore = 0;
         hasKey = false;
-        FindObjectOfType<KeyPickup>()?.ResetKey();
-        FindObjectOfType<UnlockPeg>()?.ResetLock();
+        FindFirstObjectByType<KeyPickup>().ResetKey();
+        FindFirstObjectByType<UnlockPeg>().ResetLock();
         foreach (Coin coin in FindObjectsOfType<Coin>())
         {
             coin.ResetCoin();

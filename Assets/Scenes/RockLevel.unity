@@ -13250,7 +13250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxCharges: 3
-  rechargeTime: 2
+  rechargeTime: 4
   chargeIcons:
   - {fileID: 703394938}
   - {fileID: 9769922}
