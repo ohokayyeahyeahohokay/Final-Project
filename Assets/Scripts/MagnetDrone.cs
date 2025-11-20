@@ -34,7 +34,7 @@ public class MagnetDrone : MonoBehaviour
                 break;
 
             case DroneState.Charging:
-                break; // handled in coroutine
+                break; 
 
             case DroneState.Pulsing:
                 break;

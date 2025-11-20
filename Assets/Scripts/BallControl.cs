@@ -34,6 +34,8 @@ public class BallControl : MonoBehaviour
     public TextMeshProUGUI winnerText;
     public TextMeshProUGUI player1ScoreText;
     public TextMeshProUGUI player2ScoreText;
+    private bool ReturnToHub = false;
+
 
 
 
@@ -64,6 +66,16 @@ public class BallControl : MonoBehaviour
 
     void Update()
     {
+        if (ReturnToHub)
+        {
+            if (Input.GetKeyDown(KeyCode.Return))  // click Enter/Return to return to hub
+            {
+                Time.timeScale = 1f;
+                UnityEngine.SceneManagement.SceneManager.LoadScene("Hub");
+            }
+        return;
+        }
+
         if (gameEnded)
             return;
 
@@ -284,6 +296,7 @@ public class BallControl : MonoBehaviour
         // show panel
         scorepanel.SetActive(false);
         gameOverPanel.SetActive(true);
+        ReturnToHub = true;
 
     }
 }
