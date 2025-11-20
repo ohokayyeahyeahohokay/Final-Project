@@ -11,6 +11,8 @@ public class MagnetDrone : MonoBehaviour
     public float chargeTime = 1.5f;
     public float pulseForce = 20f;
     public float cooldownTime = 2f;
+    public AudioSource pulseSound;
+
 
     private Rigidbody rb;
     private enum DroneState { Idle, Chasing, Charging, Pulsing, Cooldown }
@@ -77,6 +79,7 @@ public class MagnetDrone : MonoBehaviour
         playerRb.AddForce(dir * pulseForce, ForceMode.Impulse);
 
         state = DroneState.Pulsing;
+        pulseSound.Play();
 
         yield return new WaitForSeconds(0.2f);
         

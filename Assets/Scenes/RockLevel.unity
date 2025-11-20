@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &8538377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -416,6 +417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &26223487 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 126190, guid: be320b6d231cacc4894038f2c3375674, type: 3}
@@ -835,6 +837,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &62422466 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -879,6 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &65415317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7669856486780617717, guid: 5a2ef7db5b7c1db4a8adf9e71ea2e879, type: 3}
@@ -897,6 +901,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 80
+  coinPickup: {fileID: 943105595}
 --- !u!65 &65415319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1361,6 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1001 &125442787
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1688,6 +1694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!65 &141701563
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1817,6 +1824,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &155623696
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1930,6 +1938,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &176758493
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2124,6 +2133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &187090844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2556,6 +2566,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &204809764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -2600,6 +2611,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &206266617
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2835,6 +2847,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8050537342152234946, guid: 50e260f821baa56419af96b848301e5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 443125839}
+    - targetCorrespondingSourceObject: {fileID: 8050537342152234946, guid: 50e260f821baa56419af96b848301e5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 443125843}
   m_SourcePrefab: {fileID: 100100000, guid: 50e260f821baa56419af96b848301e5d, type: 3}
 --- !u!1001 &222005252
 PrefabInstance:
@@ -3640,6 +3655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &279488803
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5850,6 +5866,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!65 &411313805
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6228,6 +6245,7 @@ MonoBehaviour:
   chargeTime: 1.5
   pulseForce: 10
   cooldownTime: 3
+  pulseSound: {fileID: 443125843}
 --- !u!54 &443125840
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6255,6 +6273,103 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &443125843
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443125837}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 003f7418483b6824e8382fdfd19d3dea, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &455861548 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -6299,6 +6414,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &475209660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6579,6 +6695,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &494449954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7404,6 +7521,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1750348491}
+    - targetCorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1750348495}
   m_SourcePrefab: {fileID: 100100000, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
 --- !u!1 &573226710
 GameObject:
@@ -7814,6 +7934,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &606955310 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4617036660772024948, guid: 52c7d057cba585641bb68312c10d7791, type: 3}
@@ -7903,6 +8024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &612801571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 126190, guid: be320b6d231cacc4894038f2c3375674, type: 3}
@@ -8334,6 +8456,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &642926782
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9012,6 +9135,7 @@ MonoBehaviour:
   depth: 0
   pulseRadius: 5
   pulseStrength: 400
+  pulse: {fileID: 2138003627}
   ballRb: {fileID: 1690182655}
 --- !u!1 &699699606 stripped
 GameObject:
@@ -9057,6 +9181,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &702055891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9308,6 +9433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &714122848 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 120164, guid: 61b490990a08faa419b1bb6a6708ad09, type: 3}
@@ -9757,6 +9883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &769556995 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: a797bea746bba59439067b50859ce461, type: 3}
@@ -10006,6 +10133,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!4 &780737268 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a797bea746bba59439067b50859ce461, type: 3}
@@ -12156,6 +12284,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2241973402649285381, guid: 61c7dcd8337158a468821e9b631f2689, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1873184594}
+    - targetCorrespondingSourceObject: {fileID: 2241973402649285381, guid: 61c7dcd8337158a468821e9b631f2689, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1873184598}
   m_SourcePrefab: {fileID: 100100000, guid: 61c7dcd8337158a468821e9b631f2689, type: 3}
 --- !u!1 &943105585 stripped
 GameObject:
@@ -12175,6 +12306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 80
+  coinPickup: {fileID: 943105595}
 --- !u!65 &943105587
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -12201,6 +12333,103 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7006226055505156431, guid: 5a2ef7db5b7c1db4a8adf9e71ea2e879, type: 3}
   m_PrefabInstance: {fileID: 1239120848}
   m_PrefabAsset: {fileID: 0}
+--- !u!82 &943105595
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 943105585}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 11a7e71782ae6430390d783bc08409df, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &955844801
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12332,6 +12561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &962240641 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: a797bea746bba59439067b50859ce461, type: 3}
@@ -12464,6 +12694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &974849115
 GameObject:
   m_ObjectHideFlags: 0
@@ -13864,6 +14095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1041441001
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14018,6 +14250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1051557724
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14316,6 +14549,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1082074856
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15632,6 +15866,7 @@ MonoBehaviour:
   chargeTime: 1.5
   pulseForce: 10
   cooldownTime: 3
+  pulseSound: {fileID: 443125843}
 --- !u!54 &1169849788
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -15659,6 +15894,103 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &1169849791
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1169849785}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 003f7418483b6824e8382fdfd19d3dea, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1172979170 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 148516, guid: 7710ce4a7ee932b4a86742119e3babae, type: 3}
@@ -15734,6 +16066,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1 &1180310623 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -15778,6 +16111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1181714974
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16082,6 +16416,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1201923887 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: a797bea746bba59439067b50859ce461, type: 3}
@@ -16514,6 +16849,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1001 &1235492841
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -16695,6 +17031,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 7669856486780617717, guid: 5a2ef7db5b7c1db4a8adf9e71ea2e879, type: 3}
       insertIndex: -1
       addedObject: {fileID: 943105586}
+    - targetCorrespondingSourceObject: {fileID: 7669856486780617717, guid: 5a2ef7db5b7c1db4a8adf9e71ea2e879, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 943105595}
   m_SourcePrefab: {fileID: 100100000, guid: 5a2ef7db5b7c1db4a8adf9e71ea2e879, type: 3}
 --- !u!1001 &1244886215
 PrefabInstance:
@@ -16848,6 +17187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1247062921
 GameObject:
   m_ObjectHideFlags: 0
@@ -17028,6 +17368,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1252773521 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -17072,6 +17413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1258323260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17244,6 +17586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1268054430
 GameObject:
   m_ObjectHideFlags: 0
@@ -17993,6 +18336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!65 &1310778384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18534,6 +18878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1365119026 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4617036660772024948, guid: 52c7d057cba585641bb68312c10d7791, type: 3}
@@ -18623,6 +18968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1368260625
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18900,6 +19246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1374419770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19155,6 +19502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1403813340 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: a797bea746bba59439067b50859ce461, type: 3}
@@ -19483,6 +19831,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1436517922 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -19527,6 +19876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1441714160 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7669856486780617717, guid: 5a2ef7db5b7c1db4a8adf9e71ea2e879, type: 3}
@@ -19545,6 +19895,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 80
+  coinPickup: {fileID: 943105595}
 --- !u!65 &1441714162
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19646,6 +19997,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1 &1449225104 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -19690,6 +20042,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1467072543 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -19734,6 +20087,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1467566217
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -20149,6 +20503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1 &1530345826 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 185300, guid: 105b83a46d287294bbe7892a1e1f2ea3, type: 3}
@@ -20361,6 +20716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 80
+  coinPickup: {fileID: 943105595}
 --- !u!65 &1554273430
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21025,6 +21381,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1593507322 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 148516, guid: 7710ce4a7ee932b4a86742119e3babae, type: 3}
@@ -21407,6 +21764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1652021855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21989,6 +22347,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8050537342152234946, guid: 50e260f821baa56419af96b848301e5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2138003623}
+    - targetCorrespondingSourceObject: {fileID: 8050537342152234946, guid: 50e260f821baa56419af96b848301e5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2138003627}
   m_SourcePrefab: {fileID: 100100000, guid: 50e260f821baa56419af96b848301e5d, type: 3}
 --- !u!1 &1690182654
 GameObject:
@@ -22294,6 +22655,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1703219345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23151,6 +23513,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 80
+  coinPickup: {fileID: 943105595}
 --- !u!65 &1744761116
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23200,6 +23563,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!65 &1750348491
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23221,6 +23585,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 2.5726743, y: 2.5759141, z: 0.6327274}
   m_Center: {x: 0, y: 0, z: -0.000000044703484}
+--- !u!82 &1750348495
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1750348485}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 6fede028ba58b48d08e05b2bff883359, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1751085458 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 148516, guid: 7710ce4a7ee932b4a86742119e3babae, type: 3}
@@ -23420,6 +23881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!4 &1766637496 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5ccad72751160e341ad0b43ec43a620a, type: 3}
@@ -23443,6 +23905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 80
+  coinPickup: {fileID: 943105595}
 --- !u!65 &1770030764
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24479,6 +24942,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1832192403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -24766,6 +25230,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8050537342152234946, guid: 50e260f821baa56419af96b848301e5d, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1169849787}
+    - targetCorrespondingSourceObject: {fileID: 8050537342152234946, guid: 50e260f821baa56419af96b848301e5d, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1169849791}
   m_SourcePrefab: {fileID: 100100000, guid: 50e260f821baa56419af96b848301e5d, type: 3}
 --- !u!1001 &1856507054
 PrefabInstance:
@@ -24859,6 +25326,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!65 &1873184594
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -24880,6 +25348,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.217162, y: 2.2811894, z: 3.1182678}
   m_Center: {x: 0.000000834465, y: 0.2532319, z: 0.00000011920929}
+--- !u!82 &1873184598
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1873184588}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 4d24975329921423b9c49a8807c8f508, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1001 &1875357658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25546,6 +26111,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1933498888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25746,6 +26312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1946260203
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26057,6 +26624,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &1963173075 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 148516, guid: 7710ce4a7ee932b4a86742119e3babae, type: 3}
@@ -26261,6 +26829,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1972541744
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26526,6 +27095,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1001 &1981692924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26657,6 +27227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &1983686232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27100,6 +27671,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &2014771571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2241973402649285381, guid: 61c7dcd8337158a468821e9b631f2689, type: 3}
@@ -27144,6 +27716,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!4 &2018240588 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 110d2d66b09076d4e88fb91dc58961ab, type: 3}
@@ -27305,6 +27878,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1 &2042962295 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4617036660772024948, guid: 52c7d057cba585641bb68312c10d7791, type: 3}
@@ -27394,6 +27968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!1001 &2065007218
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27981,6 +28556,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 30
+  coinPickup: {fileID: 1873184598}
 --- !u!1 &2097365732 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6954758372675618198, guid: 6a301d09debaf1e4a8d3e2657cc44a96, type: 3}
@@ -28025,6 +28601,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   coinValue: 5
+  coinPickup: {fileID: 1750348495}
 --- !u!4 &2107458600 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: a797bea746bba59439067b50859ce461, type: 3}
@@ -28424,6 +29001,7 @@ MonoBehaviour:
   chargeTime: 2
   pulseForce: 10
   cooldownTime: 2
+  pulseSound: {fileID: 2138003627}
 --- !u!54 &2138003624
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -28451,6 +29029,103 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!82 &2138003627
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2138003621}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 003f7418483b6824e8382fdfd19d3dea, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

@@ -7,6 +7,7 @@ public class MagnetPulse : MonoBehaviour
     public float depth = 0f;
     public float pulseRadius = 5f;
     public float pulseStrength = 500f; 
+    public AudioSource pulse;
 
     public Rigidbody ballRb;
 
@@ -47,6 +48,8 @@ public class MagnetPulse : MonoBehaviour
     
         Vector3 direction = (ballRb.position - transform.position);
         float distance = direction.magnitude;
+
+        pulse.Play();
 
         
         if (distance <= pulseRadius)
