@@ -25,6 +25,13 @@ public class BallControl : MonoBehaviour
     public int currentBallPlayer = 1;
     public int player1Score = 0;
     public int player2Score = 0;
+    public TextMeshProUGUI player1ScoreTextHud;
+    public TextMeshProUGUI player2ScoreTextHud;
+    public GameObject scorepanel;
+
+    //gameover
+    public GameObject gameOverPanel;
+    public TextMeshProUGUI winnerText;
     public TextMeshProUGUI player1ScoreText;
     public TextMeshProUGUI player2ScoreText;
 
@@ -52,6 +59,7 @@ public class BallControl : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         UpdateScorePanels();
         UpdateRoundUI();
+        gameOverPanel.SetActive(false);
     }
 
     void Update()
@@ -162,8 +170,8 @@ public class BallControl : MonoBehaviour
 
     void UpdateScorePanels()
     {
-        player1ScoreText.text = "Player 1: " + player1Score;
-        player2ScoreText.text = "Player 2: " + player2Score;
+        player1ScoreTextHud.text = "Player 1: " + player1Score;
+        player2ScoreTextHud.text = "Player 2: " + player2Score;
     }
 
 
@@ -262,12 +270,16 @@ public class BallControl : MonoBehaviour
         // freeze game
         Time.timeScale = 0f;
 
-        //placeholder
+        string winner = (player1Score > player2Score) ? "PLAYER 1 WINS!" : "PLAYER 2 WINS!";
+        winnerText.text = winner;
 
-        // Load hub
-        // SceneManager.LoadScene("Hub");
+        // update score display
+        player1ScoreText.text = "P1 Score: " + player1Score;
+        player2ScoreText.text = "P2 Score: " + player2Score;
 
-        // Load next level
-        // SceneManager.LoadScene("");
+        // show panel
+        scorepanel.SetActive(false);
+        gameOverPanel.SetActive(true);
+
     }
 }
