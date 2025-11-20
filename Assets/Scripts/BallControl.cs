@@ -152,6 +152,13 @@ public class BallControl : MonoBehaviour
         }
     }
 
+    void UpdateScorePanels()
+    {
+        player1ScoreTextHud.text = "Player 1: " + player1Score;
+        player2ScoreTextHud.text = "Player 2: " + player2Score;
+    }
+
+
     //collect points during fall
     public void AddRunScore(int value)
     {
@@ -167,14 +174,6 @@ public class BallControl : MonoBehaviour
     
         score.AddScore(value);
     }
-
-    void UpdateScorePanels()
-    {
-        player1ScoreTextHud.text = "Player 1: " + player1Score;
-        player2ScoreTextHud.text = "Player 2: " + player2Score;
-    }
-
-
 
     //goal scoring
     private void OnTriggerEnter(Collider other)
@@ -192,7 +191,9 @@ public class BallControl : MonoBehaviour
             Debug.Log("Main Score: " + score.score);
 
             runScore = 0;
+            AddRunScore(bonus);
         }
+        
     }
 
     //bottom collision 
@@ -231,7 +232,10 @@ public class BallControl : MonoBehaviour
         hasKey = false;
         FindObjectOfType<KeyPickup>()?.ResetKey();
         FindObjectOfType<UnlockPeg>()?.ResetLock();
-        
+        foreach (Coin coin in FindObjectsOfType<Coin>())
+        {
+            coin.ResetCoin();
+        }
     }
 
     void SwitchPlayers()
