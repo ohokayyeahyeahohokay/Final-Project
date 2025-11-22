@@ -10,11 +10,12 @@ public class MagnetPulse : MonoBehaviour
     public AudioSource pulse;
 
     public Rigidbody ballRb;
-
     private Camera main;
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
         main = Camera.main;
     }
 
